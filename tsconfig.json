@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next-access/types/**/*.ts",
+    ".next-analysis/types/**/*.ts",
+    ".next-atmosphere/types/**/*.ts",
+    ".next-contrast/types/**/*.ts",
+    ".next-curated/types/**/*.ts",
+    ".next-editorial/types/**/*.ts",
+    ".next-fluid/types/**/*.ts",
+    ".next-hero/types/**/*.ts",
+    ".next-interlude/types/**/*.ts",
+    ".next-lab-dev/types/**/*.ts",
+    ".next-lab-final/types/**/*.ts",
+    ".next-lab/types/**/*.ts",
+    ".next-night/types/**/*.ts",
+    ".next-polish/types/**/*.ts",
+    ".next-product/types/**/*.ts",
+    ".next-production/types/**/*.ts",
+    ".next-release/types/**/*.ts",
+    ".next-signature/types/**/*.ts",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    ".next-notes/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
