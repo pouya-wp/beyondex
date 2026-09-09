@@ -2,7 +2,7 @@ import {accessReadiness} from "@/lib/access/contract";
 import { NextResponse, type NextRequest } from "next/server";
 import { getProvider } from "@/lib/payments";
 import { findOrder, markOrderStatus } from "@/lib/payments/orders";
-import { siteConfig } from "@/lib/data/site";
+import { siteConfig, normalizeSiteUrl } from "@/lib/data/site";
 
 export const runtime = "nodejs";
 
@@ -13,7 +13,7 @@ export const runtime = "nodejs";
  */
 export async function GET(request: NextRequest) {
   if(!accessReadiness.ready) return NextResponse.json({ok:false,code:accessReadiness.code,error:"Live purchases are not available until account and subscription services are connected."},{status:503});
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? request.nextUrl.origin ?? siteConfig.url;
+  const base = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? request.nextUrl.origin, siteConfig.url);
   const orderId = request.nextUrl.searchParams.get("orderId");
 
   const resultUrl = (locale: string, status: string, extra: Record<string, string> = {}) => {
