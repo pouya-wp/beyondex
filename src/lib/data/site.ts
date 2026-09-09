@@ -1,10 +1,29 @@
 import type { L10n } from "@/lib/i18n/config";
 
+const DEFAULT_SITE_URL = "https://beyondex.ai";
+
+/**
+ * Turn a configured site URL into an absolute one that `new URL()` accepts.
+ * A value without a scheme ("beyondex.ai") or an outright malformed one would
+ * otherwise throw where it is used as `metadataBase`, which fails the whole
+ * prerender instead of just degrading the canonical links.
+ */
+export function normalizeSiteUrl(raw: string | undefined | null, fallback = DEFAULT_SITE_URL) {
+  const candidate = raw?.trim();
+  if (!candidate) return fallback;
+  const withScheme = /^[a-z][a-z0-9+.-]*:\/\//i.test(candidate) ? candidate : `https://${candidate}`;
+  try {
+    return new URL(withScheme).toString().replace(/\/$/, "");
+  } catch {
+    return fallback;
+  }
+}
+
 export const siteConfig = {
   name: "Beyondex",
   nameFa: "بیاندکس",
   domain: "beyondex.ai",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyondex.ai",
+  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   email: "hello@beyondex.ai",
   salesEmail: "sales@beyondex.ai",
   supportEmail: "support@beyondex.ai",

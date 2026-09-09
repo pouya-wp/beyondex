@@ -6,7 +6,7 @@ import { createOrderId, saveOrder, updateOrder } from "@/lib/payments/orders";
 import { computeTotals } from "@/lib/payments/pricing";
 import { resolveItem } from "@/lib/data/catalog";
 import { isLocale, t, type Locale } from "@/lib/i18n/config";
-import { siteConfig } from "@/lib/data/site";
+import { siteConfig, normalizeSiteUrl } from "@/lib/data/site";
 import { isValidEmail } from "@/lib/utils";
 
 export const runtime = "nodejs";
@@ -30,7 +30,7 @@ function paramsFromSku(sku: string) {
 }
 
 function baseUrl(request: NextRequest) {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? request.nextUrl.origin ?? siteConfig.url;
+  return normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? request.nextUrl.origin, siteConfig.url);
 }
 
 export async function POST(request: NextRequest) {
