@@ -15,6 +15,8 @@ import { SiteChrome } from "@/components/site/SiteChrome";
 import { getDictionary } from "@/lib/i18n";
 import { isLocale, locales, localeMeta, type Locale } from "@/lib/i18n/config";
 import { siteConfig } from "@/lib/data/site";
+import { agents } from "@/lib/data/agents";
+import { localizedMetadata, safeJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -36,6 +38,7 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
 
   return {
+    ...localizedMetadata({ locale, title: dict.meta.title, description: dict.meta.description }),
     metadataBase: new URL(siteConfig.url),
     title: {
       default: dict.meta.title,
@@ -44,24 +47,20 @@ export async function generateMetadata({
     description: dict.meta.description,
     keywords: dict.meta.keywords.split(",").map((k) => k.trim()),
     applicationName: siteConfig.name,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: { fa: "/fa", en: "/en", "x-default": "/fa" },
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    creator: siteConfig.name,
+    publisher: siteConfig.name,
+    category: "Artificial intelligence software",
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [{ url: "/brand/beyondex-mark.svg", type: "image/svg+xml" }],
+      apple: [{ url: "/brand/logo-check.png" }],
     },
-    openGraph: {
-      type: "website",
-      siteName: siteConfig.name,
-      title: dict.meta.title,
-      description: dict.meta.description,
-      locale: localeMeta[locale].htmlLang,
-      url: `/${locale}`,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
     },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.meta.title,
-      description: dict.meta.description,
-    },
-    robots: { index: true, follow: true },
   };
 }
 
@@ -81,29 +80,46 @@ export default async function LocaleLayout({
 
   return (
     <html lang={htmlLang} dir={dir} data-theme="dark">
-      <head>
-        {locale === "fa" && <link rel="preload" href="/MorabbaVF.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-        />
-      </head>
+      <head>{locale === "fa" && <link rel="preload" href="/MorabbaVF.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />}</head>
       <body>
         <SiteChrome locale={locale} dict={dict}>{children}</SiteChrome>
 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: safeJsonLd({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: siteConfig.name,
-              url: siteConfig.url,
-              email: siteConfig.email,
-              description: dict.meta.description,
-              sameAs: Object.values(siteConfig.socials),
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${siteConfig.url}/#organization`,
+                  name: siteConfig.name,
+                  alternateName: siteConfig.nameFa,
+                  url: siteConfig.url,
+                  email: siteConfig.email,
+                  logo: `${siteConfig.url}/brand/beyondex-logo.svg`,
+                  description: dict.meta.description,
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteConfig.url}/#website`,
+                  url: siteConfig.url,
+                  name: siteConfig.name,
+                  publisher: { "@id": `${siteConfig.url}/#organization` },
+                  inLanguage: ["fa-IR", "en"],
+                  hasPart: agents.map((agent) => ({
+                    "@type": "SoftwareApplication",
+                    "@id": `${siteConfig.url}/${locale}/agents/${agent.slug}#software`,
+                    name: agent.name[locale],
+                    alternateName: agent.name[locale === "fa" ? "en" : "fa"],
+                    description: agent.tagline[locale],
+                    url: `${siteConfig.url}/${locale}/agents/${agent.slug}`,
+                    applicationCategory: "BusinessApplication",
+                    operatingSystem: "Web",
+                    inLanguage: htmlLang,
+                  })),
+                },
+              ],
             }),
           }}
         />

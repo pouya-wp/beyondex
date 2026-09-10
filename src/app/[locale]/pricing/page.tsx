@@ -9,7 +9,8 @@ import { SectionHeading } from "@/components/ui/Primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { getDictionary } from "@/lib/i18n";
 import { isLocale, t, type Locale } from "@/lib/i18n/config";
-import { securityPoints } from "@/lib/data/site";
+import { faqs, securityPoints } from "@/lib/data/site";
+import { localizedMetadata, safeJsonLd } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -19,11 +20,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = getDictionary(locale);
-  return {
-    title: dict.nav.pricing,
-    description: dict.pricing.subtitle,
-    alternates: { canonical: `/${locale}/pricing` },
-  };
+  return localizedMetadata({ locale, path: "/pricing", title: dict.nav.pricing, description: dict.pricing.subtitle });
 }
 
 export default async function PricingPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -34,6 +31,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:safeJsonLd({"@context":"https://schema.org","@type":"FAQPage",inLanguage:locale==="fa"?"fa-IR":"en",mainEntity:faqs.map((item)=>({"@type":"Question",name:t(item.q,locale),acceptedAnswer:{"@type":"Answer",text:t(item.a,locale)}}))})}} />
       <section className="relative overflow-hidden pb-4 pt-16 md:pt-20">
         <div className="wash" />
         <div className="dots" />

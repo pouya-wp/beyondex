@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/home/CtaBand";
 import { SectionHeading } from "@/components/ui/Primitives";
 import { getDictionary } from "@/lib/i18n";
 import { isLocale, type Locale } from "@/lib/i18n/config";
+import { localizedMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -15,11 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = getDictionary(locale);
-  return {
-    title: dict.nav.agents,
-    description: dict.agentsSection.subtitle,
-    alternates: { canonical: `/${locale}/agents` },
-  };
+  return localizedMetadata({ locale, path: "/agents", title: dict.nav.agents, description: dict.agentsSection.subtitle });
 }
 
 export default async function AgentsPage({ params }: { params: Promise<{ locale: string }> }) {
