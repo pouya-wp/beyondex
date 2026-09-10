@@ -2,8 +2,9 @@ import type { MetadataRoute } from "next";
 import { agents } from "@/lib/data/agents";
 import { locales } from "@/lib/i18n/config";
 import { siteConfig } from "@/lib/data/site";
+import { getAllBlogPosts } from "@/lib/blog";
 
-const staticPaths = ["", "/agents", "/pricing", "/contact", "/about", "/lab"];
+const staticPaths = ["", "/agents", "/pricing", "/contact", "/about", "/lab", "/blog"];
 
 function languageAlternates(path: string) {
   return {
@@ -14,6 +15,7 @@ function languageAlternates(path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getAllBlogPosts();
   const pages = locales.flatMap((locale) =>
     staticPaths.map((path) => ({
       url: `${siteConfig.url}/${locale}${path}`,
@@ -32,6 +34,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...pages, ...agentPages];
+  const articlePages = locales.flatMap((locale) =>
+    posts.map((post) => ({
+      url: `${siteConfig.url}/${locale}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: { languages: languageAlternates(`/blog/${post.slug}`) },
+    })),
+  );
+
+  return [...pages, ...agentPages, ...articlePages];
 }
 

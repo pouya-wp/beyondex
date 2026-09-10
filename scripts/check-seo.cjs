@@ -12,7 +12,7 @@ function unescapeHtml(value) {
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
   const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 36, "Expected six bilingual core pages and twelve bilingual agent pages");
+  assert.equal(urls.length, 42, "Expected seven bilingual core pages, twelve bilingual agent pages, and two bilingual articles");
   assert.ok(!sitemap.includes("beyondex.ai"));
 
   for (const canonicalUrl of urls) {
@@ -36,7 +36,7 @@ function unescapeHtml(value) {
     assert.ok(robots.includes(marker), `robots.txt: ${marker}`);
   }
 
-  for (const resource of ["/llms.txt", "/llms-full.txt", "/content.json", "/manifest.webmanifest"]) {
+  for (const resource of ["/llms.txt", "/llms-full.txt", "/content.json", "/feed.xml", "/blog-publishing-guide.txt", "/api/blog/publish", "/manifest.webmanifest"]) {
     const response = await fetch(`${base}${resource}`);
     assert.equal(response.status, 200, resource);
     assert.ok(Number(response.headers.get("content-length") || 1) > 0, resource);
@@ -45,6 +45,7 @@ function unescapeHtml(value) {
   const content = await (await fetch(`${base}/content.json`)).json();
   assert.equal(content.canonicalUrl, canonicalOrigin);
   assert.equal(content.agents.length, 12);
+  assert.equal(content.articles.length, 2);
   assert.deepEqual(content.languages.map((language) => language.code), ["fa", "en"]);
 
   for (const privatePath of ["/fa/dashboard", "/en/dashboard", "/fa/checkout/result", "/en/checkout/result"]) {

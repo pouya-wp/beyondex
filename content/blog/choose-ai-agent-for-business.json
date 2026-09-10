@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "slug": "choose-ai-agent-for-business",
+  "status": "published",
+  "publishedAt": "2026-09-10T08:00:00.000Z",
+  "updatedAt": "2026-09-10T08:00:00.000Z",
+  "author": { "fa": "تیم محتوای بیاندکس", "en": "Beyondex Editorial Team" },
+  "category": { "fa": "راهنمای انتخاب ایجنت", "en": "Agent selection guide" },
+  "title": { "fa": "چطور اولین ایجنت هوش مصنوعی کسب‌وکارمان را انتخاب کنیم؟", "en": "How to choose the first AI agent for your business" },
+  "excerpt": { "fa": "یک چارچوب عملی برای پیدا کردن فرایند مناسب، سنجش ریسک و تعریف آزمایشی که پیش از خرید نشان دهد یک ایجنت واقعاً برای تیم شما ارزش می‌سازد یا نه.", "en": "A practical framework for finding the right workflow, sizing its risk, and designing a pilot that proves whether an AI agent creates real value before you buy." },
+  "seoTitle": { "fa": "راهنمای انتخاب ایجنت هوش مصنوعی برای کسب‌وکار", "en": "How to choose an AI agent for your business" },
+  "seoDescription": { "fa": "با این چارچوب عملی، فرایند مناسب برای ایجنت هوش مصنوعی را انتخاب کنید، ریسک را بسنجید و یک آزمایش قابل‌اندازه‌گیری طراحی کنید.", "en": "Use this practical framework to select an AI-agent workflow, evaluate risk, and design a measurable pilot before making a long-term commitment." },
+  "keywords": { "fa": ["ایجنت هوش مصنوعی", "اتوماسیون کسب‌وکار", "انتخاب ابزار هوش مصنوعی", "آزمایش ایجنت"], "en": ["AI agent", "business automation", "AI agent selection", "AI pilot"] },
+  "sections": [
+    {
+      "id": "start-with-work",
+      "heading": { "fa": "از کار شروع کنید، نه از مدل", "en": "Start with the work, not the model" },
+      "body": { "fa": "انتخاب خوب با فهرست‌کردن نام مدل‌ها شروع نمی‌شود. یک هفته کار تیم را مشاهده کنید و وظایفی را بنویسید که تکراری‌اند، ورودی و خروجی مشخص دارند و زمان قابل‌توجهی می‌گیرند. «بهبود بازاریابی» مسئله‌ای مبهم است، اما «دسته‌بندی تیکت‌های ورودی و آماده‌کردن پیش‌نویس پاسخ بر اساس پایگاه دانش» یک جریان قابل‌آزمایش است. هرچه مرز کار روشن‌تر باشد، مقایسهٔ خروجی ایجنت با روش فعلی منصفانه‌تر و تصمیم نهایی ساده‌تر خواهد بود.", "en": "A sound choice does not begin with a list of model names. Observe a week of team activity and identify jobs that repeat, have recognizable inputs and outputs, and consume meaningful time. “Improve marketing” is too vague; “classify incoming tickets and draft replies from the approved knowledge base” is testable. A clear boundary makes it possible to compare the agent with the current process, spot failure modes, and decide on evidence rather than the quality of a sales demo." },
+      "bullets": { "fa": ["تکرارپذیری وظیفه را بسنجید.", "ورودی و خروجی موردانتظار را نمونه‌گذاری کنید.", "زمان و هزینهٔ روش فعلی را ثبت کنید."], "en": ["Measure how often the task repeats.", "Collect representative inputs and expected outputs.", "Record the time and cost of the current process."] }
+    },
+    {
+      "id": "value-risk-matrix",
+      "heading": { "fa": "ارزش و ریسک را روی یک ماتریس ساده بگذارید", "en": "Plot value and risk on one simple matrix" },
+      "body": { "fa": "دو سؤال برای اولویت‌بندی کافی است: اگر این کار بهتر انجام شود چه ارزشی ایجاد می‌کند، و اگر اشتباه انجام شود چه آسیبی می‌زند؟ کارهای پرتکرار و کم‌ریسک—مثل خلاصه‌سازی داخلی، آماده‌سازی پیش‌نویس یا مرتب‌کردن داده—شروع‌های خوبی هستند. تصمیم‌های مالی، حقوقی، استخدامی یا اقداماتی که مستقیماً برای مشتری ارسال می‌شوند، به کنترل و تأیید بیشتری نیاز دارند. هدف این نیست که همیشه کم‌ریسک‌ترین کار را انتخاب کنید؛ هدف این است که سطح اختیار ایجنت با پیامد خطا متناسب باشد.", "en": "Two questions are enough for initial prioritization: what value appears if this work improves, and what harm follows if it is wrong? Frequent, reversible work such as internal summaries, first drafts, and data classification is often a good starting point. Financial, legal, hiring, or customer-facing actions require tighter controls and explicit approval. The goal is not to avoid every meaningful workflow. It is to match the agent’s authority, permissions, and review path to the consequence of a mistake." }
+    },
+    {
+      "id": "define-success",
+      "heading": { "fa": "موفقیت را پیش از اجرای آزمایش تعریف کنید", "en": "Define success before the pilot begins" },
+      "body": { "fa": "اگر معیار را بعد از دیدن نتیجه انتخاب کنید، تقریباً هر آزمایشی موفق به نظر می‌رسد. پیش از شروع، یک خط مبنا و چند معیار محدود ثبت کنید: زمان چرخه، درصد خروجی قابل‌استفاده بدون بازنویسی، نرخ خطای مهم، تعداد موارد نیازمند دخالت و رضایت کاربر داخلی. صرفه‌جویی زمانی را جدا از انتقال کار اندازه بگیرید؛ ممکن است ایجنت ده دقیقه از کارشناس کم کند اما پانزده دقیقه بازبینی تازه بسازد. معیار خوب باید کیفیت، سرعت و هزینهٔ نظارت را هم‌زمان نشان دهد.", "en": "If you choose metrics after seeing the result, almost any pilot can look successful. Record a baseline and a small scorecard first: cycle time, the share of outputs usable without a rewrite, material-error rate, escalation count, and internal user satisfaction. Measure saved time separately from shifted work. An agent may remove ten minutes of drafting while creating fifteen minutes of review. A useful scorecard captures quality, speed, and the cost of supervision together, so a faster but less dependable workflow cannot hide behind one attractive number." }
+    },
+    {
+      "id": "test-real-cases",
+      "heading": { "fa": "با نمونه‌های واقعی و دشوار تست کنید", "en": "Test representative and difficult cases" },
+      "body": { "fa": "دموی فروش معمولاً مسیر تمیز را نشان می‌دهد؛ کار روزمره پر از ورودی ناقص، استثنا و تضاد است. مجموعهٔ آزمایش را از موارد عادی، موارد مرزی و چند شکست شناخته‌شده بسازید. خروجی‌ها را بدون نمایش نام روش به ارزیاب بدهید تا نسخهٔ ایجنت و انسان با معیار یکسان سنجیده شوند. علاوه بر پاسخ درست، رفتار هنگام ندانستن را بررسی کنید: آیا ایجنت سؤال می‌پرسد، منبع را نشان می‌دهد و کار را به انسان ارجاع می‌دهد، یا با اعتمادبه‌نفس چیزی می‌سازد؟‌", "en": "Sales demonstrations usually show the clean path, while daily work contains missing context, exceptions, and conflicting instructions. Build an evaluation set from ordinary examples, edge cases, and known past failures. Blind the reviewer to whether an output came from the agent or the existing process, then apply the same rubric. Evaluate behavior under uncertainty as carefully as correct answers: does the agent ask for missing information, show its source, and escalate, or does it manufacture a confident answer?" }
+    },
+    {
+      "id": "buying-checklist",
+      "heading": { "fa": "پیش از تعهد بلندمدت این پرسش‌ها را پاسخ دهید", "en": "Answer these questions before a long commitment" },
+      "body": { "fa": "در پایان آزمایش باید بتوانید مسیر داده، مسئولیت و هزینه را توضیح دهید. چه داده‌ای وارد سرویس می‌شود و کجا نگهداری می‌شود؟ چه کسی می‌تواند اتصال‌ها و مجوزها را تغییر دهد؟ گزارش فعالیت و امکان توقف فوری وجود دارد؟ قیمت با افزایش استفاده چگونه تغییر می‌کند؟ داده و تنظیمات در صورت خروج قابل‌انتقال‌اند؟ پاسخ مبهم به این پرسش‌ها یک ریسک اجرایی است، حتی اگر کیفیت نمونه‌ها عالی باشد. انتخاب خوب محصولی است که در فرایند واقعی تیم قابل‌کنترل، قابل‌اندازه‌گیری و قابل‌خروج باشد.", "en": "At the end of the pilot, you should be able to explain the data path, accountability, and cost. What data enters the service, and where is it retained? Who can change connections and permissions? Is there an activity log and an immediate stop control? How does cost change with usage? Can you export your data and configuration if you leave? Ambiguous answers are operational risk even when sample quality is excellent. A durable choice is controllable, measurable, and reversible inside the team’s real workflow." },
+      "bullets": { "fa": ["مالک هر اتصال و مجوز را مشخص کنید.", "برای خطا و توقف اضطراری مسیر روشن داشته باشید.", "هزینهٔ نظارت انسانی را وارد محاسبه کنید.", "شرایط خروج و انتقال داده را مکتوب کنید."], "en": ["Assign an owner to every connection and permission.", "Document failure escalation and emergency stop procedures.", "Include human review in total cost.", "Write down data export and exit conditions."] }
+    }
+  ],
+  "faq": [
+    { "question": { "fa": "بهترین کار برای شروع با ایجنت هوش مصنوعی چیست؟", "en": "What is the best first workflow for an AI agent?" }, "answer": { "fa": "کاری پرتکرار، قابل‌اندازه‌گیری و برگشت‌پذیر که ورودی و خروجی مشخص دارد و خطای آن پیش از ایجاد آسیب توسط انسان قابل‌تشخیص است.", "en": "Choose frequent, measurable, reversible work with clear inputs and outputs, where a person can detect a mistake before it causes harm." } },
+    { "question": { "fa": "آزمایش ایجنت چقدر باید طول بکشد؟", "en": "How long should an AI-agent pilot run?" }, "answer": { "fa": "به‌جای یک عدد ثابت، آزمایش را تا پوشش حجم معناداری از موارد عادی و مرزی ادامه دهید؛ برای بسیاری از فرایندهای روزانه دو تا چهار هفته نقطهٔ شروع مناسبی است.", "en": "Run it long enough to cover a meaningful sample of normal and edge cases. For many daily workflows, two to four weeks is a practical starting point." } }
+  ],
+  "sources": [
+    { "title": "Google Search Central — Creating helpful, reliable, people-first content", "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content" },
+    { "title": "NIST — Artificial Intelligence Risk Management Framework", "url": "https://www.nist.gov/itl/ai-risk-management-framework" }
+  ],
+  "disclosure": { "fa": "این مقاله با کمک هوش مصنوعی، بر اساس منابع ذکرشده و با بازبینی معیارهای تحریریهٔ بیاندکس تهیه شده است.", "en": "This article was prepared with AI assistance, grounded in the cited sources, and reviewed against Beyondex editorial standards." }
+}

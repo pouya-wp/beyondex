@@ -1,9 +1,11 @@
 import { agents } from "@/lib/data/agents";
 import { faqs, siteConfig } from "@/lib/data/site";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
 export function GET() {
+  const posts = getAllBlogPosts();
   return Response.json(
     {
       name: siteConfig.name,
@@ -28,6 +30,22 @@ export function GET() {
         integrations,
         guardrails,
       })),
+      articles: posts.map(({ slug, publishedAt, updatedAt, author, category, title, excerpt, keywords, sections, faq, sources, disclosure }) => ({
+        slug,
+        urls: { fa: `${siteConfig.url}/fa/blog/${slug}`, en: `${siteConfig.url}/en/blog/${slug}` },
+        publishedAt,
+        updatedAt,
+        author,
+        category,
+        title,
+        excerpt,
+        keywords,
+        sections,
+        faq,
+        sources,
+        disclosure,
+      })),
+      feeds: { rss: `${siteConfig.url}/feed.xml`, llms: `${siteConfig.url}/llms.txt`, llmsFull: `${siteConfig.url}/llms-full.txt` },
       faqs,
     },
     { headers: { "cache-control": "public, max-age=3600, s-maxage=86400" } },

@@ -11,6 +11,7 @@ import "../experiments.css";
 import "../lab.css";
 import "../selections.css";
 import "../product.css";
+import "../blog.css";
 import { SiteChrome } from "@/components/site/SiteChrome";
 import { getDictionary } from "@/lib/i18n";
 import { isLocale, locales, localeMeta, type Locale } from "@/lib/i18n/config";
