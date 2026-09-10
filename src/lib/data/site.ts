@@ -1,6 +1,6 @@
 import type { L10n } from "@/lib/i18n/config";
 
-const DEFAULT_SITE_URL = "https://beyondex.ai";
+const DEFAULT_SITE_URL = "https://beyondex.one";
 
 /**
  * Turn a configured site URL into an absolute one that `new URL()` accepts.
@@ -22,8 +22,11 @@ export function normalizeSiteUrl(raw: string | undefined | null, fallback = DEFA
 export const siteConfig = {
   name: "Beyondex",
   nameFa: "بیاندکس",
-  domain: "beyondex.ai",
-  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
+  domain: "beyondex.one",
+  url:
+    process.env.NODE_ENV === "production"
+      ? DEFAULT_SITE_URL
+      : normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   email: "hello@beyondex.ai",
   salesEmail: "sales@beyondex.ai",
   supportEmail: "support@beyondex.ai",

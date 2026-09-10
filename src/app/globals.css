@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Morabba";
+  src: url("/MorabbaVF.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 /* ============================================================
    Beyondex — light design system
    Violet lineage from #471882 (Iranicard), brightened into a
@@ -64,9 +72,9 @@
   --header-h: 4.25rem;
   --topbar-h: 2.25rem;
 
-  --font-fa: "Vazirmatn", "IRANSans", ui-sans-serif, system-ui, sans-serif;
-  --font-en: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-fa: "Morabba", Tahoma, ui-sans-serif, system-ui, sans-serif;
+  --font-en: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
