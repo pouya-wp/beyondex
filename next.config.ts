@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/agents", destination: "/fa/agents", permanent: false },
       { source: "/pricing", destination: "/fa/pricing", permanent: false },
+      { source: "/blog", destination: "/fa/blog", permanent: false },
     ];
   },
   async headers() {
@@ -26,7 +27,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/:machineFile(llms\\.txt|llms-full\\.txt|content\\.json|sitemap\\.xml|robots\\.txt)",
+        source: "/:machineFile(llms\\.txt|llms-full\\.txt|content\\.json|feed\\.xml|blog-publishing-guide\\.txt|sitemap\\.xml|robots\\.txt)",
         headers: [{ key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800" }],
       },
     ];

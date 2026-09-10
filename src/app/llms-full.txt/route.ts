@@ -1,9 +1,25 @@
 import { agents } from "@/lib/data/agents";
 import { faqs, siteConfig } from "@/lib/data/site";
+import { articlePlainText, getAllBlogPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
 export function GET() {
+  const articles = getAllBlogPosts().map((post) => `## ${post.title.en} / ${post.title.fa}
+English URL: ${siteConfig.url}/en/blog/${post.slug}
+Persian URL: ${siteConfig.url}/fa/blog/${post.slug}
+Published: ${post.publishedAt}
+Category: ${post.category.en} / ${post.category.fa}
+
+### English
+${articlePlainText(post, "en")}
+
+### فارسی
+${articlePlainText(post, "fa")}
+
+### Sources
+${post.sources.map((source) => `- ${source.title}: ${source.url}`).join("\n")}
+`).join("\n");
   const agentContent = agents.map((agent) => `## ${agent.name.en} / ${agent.name.fa}
 URL: ${siteConfig.url}/en/agents/${agent.slug}
 Persian URL: ${siteConfig.url}/fa/agents/${agent.slug}
@@ -29,6 +45,9 @@ ${agentContent}
 
 # Frequently asked questions
 ${faqContent}
+
+# Beyondex journal
+${articles}
 `;
   return new Response(body, {
     headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600, s-maxage=86400" },

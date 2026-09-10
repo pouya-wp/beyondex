@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "slug": "human-oversight-for-ai-agents",
+  "status": "published",
+  "publishedAt": "2026-09-09T08:00:00.000Z",
+  "updatedAt": "2026-09-09T08:00:00.000Z",
+  "author": { "fa": "تیم محتوای بیاندکس", "en": "Beyondex Editorial Team" },
+  "category": { "fa": "طراحی و ایمنی ایجنت", "en": "Agent design and safety" },
+  "title": { "fa": "نظارت انسانی برای ایجنت‌های هوش مصنوعی؛ کجا تأیید لازم است؟", "en": "Human oversight for AI agents: where approval belongs" },
+  "excerpt": { "fa": "راهنمایی عملی برای طراحی تأیید انسانی بر اساس پیامد خطا، برگشت‌پذیری و عدم‌قطعیت؛ بدون آنکه هر اقدام کوچک به گلوگاه تبدیل شود.", "en": "A practical guide to placing human approval according to consequence, reversibility, and uncertainty—without turning every small action into a bottleneck." },
+  "seoTitle": { "fa": "طراحی نظارت انسانی برای ایجنت‌های هوش مصنوعی", "en": "Designing human oversight for AI agents" },
+  "seoDescription": { "fa": "یاد بگیرید تأیید انسانی را بر اساس ریسک، برگشت‌پذیری و عدم‌قطعیت در جریان کاری ایجنت قرار دهید و نظارت مؤثر بسازید.", "en": "Learn how to place human approval in AI-agent workflows using risk, reversibility, and uncertainty, while keeping oversight practical and effective." },
+  "keywords": { "fa": ["نظارت انسانی", "ایمنی ایجنت هوش مصنوعی", "کنترل هوش مصنوعی", "human in the loop"], "en": ["human oversight", "AI agent safety", "human in the loop", "AI controls"] },
+  "sections": [
+    {
+      "id": "approval-is-design",
+      "heading": { "fa": "تأیید انسانی یک دکمه نیست؛ بخشی از طراحی سیستم است", "en": "Human approval is a system design, not a button" },
+      "body": { "fa": "افزودن دکمهٔ «تأیید» به انتهای فرایند الزاماً کنترل ایجاد نمی‌کند. بازبین باید بداند چه چیزی تغییر کرده، ایجنت بر چه اطلاعاتی تکیه کرده و پیامد تأیید چیست. اگر روزانه صدها درخواست مشابه بدون اولویت‌بندی نمایش داده شوند، تأیید به عادت مکانیکی تبدیل می‌شود. نظارت مؤثر اطلاعات لازم را در لحظهٔ تصمیم نشان می‌دهد، موارد عادی را از استثنا جدا می‌کند و مسئول مشخصی دارد که اختیار رد، اصلاح یا توقف جریان را واقعاً در اختیار دارد.", "en": "Adding an approval button at the end of a workflow does not automatically create control. The reviewer needs to see what changed, which evidence the agent used, and what approval will cause. If hundreds of similar requests arrive without prioritization, review becomes a mechanical habit. Effective oversight presents decision-relevant context, separates routine work from exceptions, and assigns a person who genuinely has the authority to reject, edit, or stop the workflow." }
+    },
+    {
+      "id": "three-risk-signals",
+      "heading": { "fa": "سه سیگنال برای تعیین نقطهٔ تأیید", "en": "Use three signals to place approval" },
+      "body": { "fa": "سه متغیر ساده محل نظارت را روشن می‌کنند: شدت پیامد، امکان برگشت و میزان عدم‌قطعیت. ارسال پیش‌نویس داخلی معمولاً برگشت‌پذیر و کم‌پیامد است؛ انتقال وجه یا حذف داده چنین نیست. حتی یک اقدام معمولی وقتی دادهٔ ورودی ناقص، منبع متناقض یا خروجی خارج از الگوی شناخته‌شده دارد باید به انسان برسد. به‌جای تعیین یک قانون ثابت برای تمام کارها، آستانه‌ای بسازید که با ترکیب این سه سیگنال سطح اختیار ایجنت را کاهش یا افزایش دهد.", "en": "Three variables clarify where review belongs: consequence, reversibility, and uncertainty. An internal draft is usually reversible and low consequence; transferring funds or deleting records is not. Even a routine action should escalate when its input is incomplete, sources conflict, or the output falls outside a known pattern. Instead of one permanent rule for every task, define thresholds that reduce or expand the agent’s authority as these three signals change." },
+      "bullets": { "fa": ["پیامد: در صورت خطا چه کسی و چقدر آسیب می‌بیند؟", "برگشت‌پذیری: آیا اقدام کامل و سریع قابل‌لغو است؟", "عدم‌قطعیت: آیا ورودی و شواهد برای تصمیم کافی‌اند؟"], "en": ["Consequence: who is affected, and how seriously, if this is wrong?", "Reversibility: can the action be fully and quickly undone?", "Uncertainty: are the input and evidence sufficient for the decision?"] }
+    },
+    {
+      "id": "approval-levels",
+      "heading": { "fa": "چهار سطح اختیار تعریف کنید", "en": "Define four levels of authority" },
+      "body": { "fa": "یک مدل چهارسطحی از دوگانهٔ «خودکار یا دستی» کاربردی‌تر است. در سطح مشاهده، ایجنت فقط تحلیل می‌کند. در سطح پیشنهاد، اقدام را آماده می‌کند اما انسان اجرا می‌کند. در سطح اجرای قابل‌برگشت، ایجنت اقدام محدود را انجام می‌دهد و گزارش فوری می‌سازد. در سطح اجرای حساس، تأیید صریح و احراز هویت دوباره لازم است. هر قابلیت باید سطح پیش‌فرض، شرایط ارتقا یا تنزل و سقف حجم داشته باشد؛ مثلاً ارسال حداکثر ده پیام آزمایشی مجاز باشد اما کمپین بزرگ تأیید بخواهد.", "en": "A four-level model is more useful than a simple automated-versus-manual switch. At observe, the agent only analyzes. At propose, it prepares an action but a person executes it. At reversible execution, it performs a bounded action and reports immediately. At sensitive execution, explicit approval and renewed authentication are required. Every capability should have a default level, escalation conditions, and a volume ceiling—for example, ten test messages may be allowed while a full campaign requires approval." }
+    },
+    {
+      "id": "make-review-meaningful",
+      "heading": { "fa": "بازبینی را کوتاه اما معنادار کنید", "en": "Make review brief but meaningful" },
+      "body": { "fa": "صفحهٔ تأیید خوب همهٔ داده‌ها را تکرار نمی‌کند؛ تفاوت، دلیل و ریسک را برجسته می‌کند. نسخهٔ پیشنهادی را کنار وضعیت فعلی بگذارید، منابع کلیدی و فرض‌های ایجنت را نشان دهید و مشخص کنید کدام سیاست باعث توقف شده است. گزینه‌ها باید فقط «بله» و «خیر» نباشند: اصلاح، بازگرداندن برای اطلاعات بیشتر و رد همراه با دلیل، دادهٔ آموزشی ارزشمندی برای بهبود قواعد می‌سازند. زمان تصمیم و نرخ اصلاح را ثبت کنید تا بفهمید نظارت واقعاً کنترل ایجاد می‌کند یا فقط هزینه جابه‌جا شده است.", "en": "A useful approval screen does not repeat every field; it highlights the change, rationale, and risk. Put the proposed state beside the current state, show key sources and assumptions, and name the policy that triggered review. The choices should go beyond yes and no. Edit, request more information, and reject with a reason create valuable signals for improving the rules. Track review time and edit rate to learn whether oversight is creating control or merely moving work from one queue to another." }
+    },
+    {
+      "id": "audit-and-stop",
+      "heading": { "fa": "گزارش رویداد و توقف اضطراری را فراموش نکنید", "en": "Keep an audit trail and a real stop control" },
+      "body": { "fa": "برای بررسی یک خطا باید بتوانید مسیر تصمیم را بازسازی کنید: ورودی چه بود، کدام نسخهٔ دستور و مدل استفاده شد، چه ابزارهایی فراخوانی شدند، چه کسی تأیید کرد و خروجی کجا ارسال شد. این گزارش نباید شامل دادهٔ حساس اضافی باشد و دورهٔ نگهداری آن باید مشخص باشد. در کنار گزارش، یک توقف اضطراری واقعی لازم است که دسترسی ابزار را قطع کند، کارهای صف‌شده را نگه دارد و مسئولان را مطلع کند. تمرین دوره‌ای توقف، ضعف‌هایی را آشکار می‌کند که در سند طراحی دیده نمی‌شوند.", "en": "To investigate a failure, you need to reconstruct the decision path: the input, instruction and model versions, tools called, approving person, and destination of the output. The log should avoid unnecessary sensitive data and have a defined retention period. Pair it with a real emergency stop that revokes tool access, holds queued actions, and alerts accountable owners. Rehearsing that stop periodically reveals gaps that remain invisible in a design document and confirms that control survives outside the happy path." },
+      "bullets": { "fa": ["رویدادهای تصمیم و اقدام را با شناسهٔ قابل‌پیگیری ثبت کنید.", "دسترسی‌ها را با کمترین سطح لازم صادر کنید.", "توقف اضطراری را پیش از نیاز واقعی آزمایش کنید."], "en": ["Log decisions and actions with traceable identifiers.", "Grant each integration the least privilege it needs.", "Test the emergency stop before a real incident requires it."] }
+    }
+  ],
+  "faq": [
+    { "question": { "fa": "آیا همهٔ اقدامات ایجنت باید تأیید انسانی داشته باشند؟", "en": "Should every agent action require human approval?" }, "answer": { "fa": "خیر. تأیید مداوم برای کارهای کم‌ریسک خستگی و تأیید مکانیکی می‌سازد. سطح نظارت باید با پیامد، برگشت‌پذیری و عدم‌قطعیت هر اقدام متناسب باشد.", "en": "No. Constant approval for low-risk work creates fatigue and mechanical review. Oversight should match each action’s consequence, reversibility, and uncertainty." } },
+    { "question": { "fa": "مهم‌ترین داده برای سنجش کیفیت نظارت چیست؟", "en": "Which metric best shows whether oversight works?" }, "answer": { "fa": "یک معیار کافی نیست. نرخ اصلاح یا رد را همراه زمان بازبینی، خطاهای عبورکرده و تعداد ارجاع‌های درست بررسی کنید تا کیفیت و هزینهٔ کنترل هم‌زمان دیده شوند.", "en": "No single metric is enough. Combine edit or rejection rate with review time, escaped errors, and appropriate escalations to see both control quality and cost." } }
+  ],
+  "sources": [
+    { "title": "NIST — AI Risk Management Framework 1.0", "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10" },
+    { "title": "NIST — Generative Artificial Intelligence Profile", "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" }
+  ],
+  "disclosure": { "fa": "این مقاله با کمک هوش مصنوعی، بر اساس منابع ذکرشده و با بازبینی معیارهای تحریریهٔ بیاندکس تهیه شده است.", "en": "This article was prepared with AI assistance, grounded in the cited sources, and reviewed against Beyondex editorial standards." }
+}
